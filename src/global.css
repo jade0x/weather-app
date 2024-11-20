@@ -1,22 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 
+  Default browser font size - 16px
+  Setting 62.5% so 1rem = 10px
+  */
+  font-size: 62.5%;
+}
+
 body {
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  color: rgb(51, 51, 51);
+  min-height: 100vh; /*set to full viewport height*/
+  display: flex;
+  flex-direction: column;
   background-color: rgb(151, 203, 219);
+  color: rgb(51, 51, 51);
+  font-family: "Nunito", sans-serif;
+  font-size: 1.6rem; /*set base font to 16px*/
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .weather-app {
   display: block;
   width: 60%;
-  margin: 60px auto;
+  margin: 0px auto;
 }
 
+.search-bar {
+  padding: 10px 0px;
+}
+
+/*Global Form Styling*/
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
 input {
   font-family: inherit;
+  font-size: 2.6rem; /*26px*/
   font-weight: 600;
   border: 0px;
-  border-radius: 20px;
-  padding: 3px 15px;
+  border-radius: 9999px;
+  padding: 5px 15px;
+  margin: 3px;
 }
 
 input[type="submit"] {
@@ -28,10 +64,49 @@ input[type="submit"] {
   color: rgb(51, 51, 51);
 }
 
+/*Results Section*/
+.weather-results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-city {
+  font-size: 3.6rem; /*34px*/
+  font-weight: 900;
+}
+
+.city-details {
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
+
+.current-temperature {
+  display: flex;
+  align-items: flex-start;
+  font-weight: 800;
+}
+
+.temperature-icon {
+  position: relative;
+  font-size: 4.5rem; /*40px*/
+  top: 1.4rem;
+}
+.temperature-value {
+  font-size: 7rem; /*40px*/
+}
+
+.temperature-unit {
+  position: relative;
+  font-size: 2rem; /*20px*/
+  font-weight: 800;
+  top: 1.6rem;
+}
+
+/*Footer bar*/
 footer {
   margin: auto;
   text-align: center;
-  font-size: smaller;
+  font-size: 1.2rem; /*12px*/
   font-weight: 600;
 }
 
@@ -43,4 +118,6 @@ footer a {
 
 footer a:hover {
   font-style: italic;
+  color: rgb(255, 219, 147);
+  font-weight: 500;
 }

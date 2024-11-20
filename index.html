@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather</title>
   </head>
   <body>
@@ -13,12 +19,24 @@
         <article class="search-bar">
           <form action="">
             <input type="search" placeholder="Enter a city" />
-            <input type="submit" value="Search" />
+            <input type="submit" value="Go" />
           </form>
         </article>
         <article class="weather-results">
-          <div>City Name as a heading</div>
-          <div>Temperature right now</div>
+          <div>
+            <h1 class="search-city">City Name</h1>
+            <p class="city-details">
+              Day Time, weather details <br />
+              Humidity: <strong>00%</strong>, Wind: <strong>0.0km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="temperature-icon">☀️</span>
+            <span class="temperature-value">00</span>
+            <sup class="temperature-unit">°C</sup>
+          </div>
+        </article>
+        <article>
           <div>
             7 day forecast
             <ul>
@@ -34,7 +52,10 @@
         </article>
       </section>
     </main>
-    <footer>This project was coded by Jade Garafola</footer>
+    <footer>
+      This project was coded by
+      <a href="https://github.com/jade0x">Jade Garafola</a>
+    </footer>
   </body>
   <script src="src/index.js"></script>
 </html>
