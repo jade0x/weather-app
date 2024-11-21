@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <title>Weather</title>
   </head>
   <body>
@@ -26,7 +27,8 @@
           <div>
             <h1 class="search-city">City Name</h1>
             <p class="city-details">
-              <span id="current-date"></span>, weather details <br />
+              <span id="current-date"></span
+              ><span id="current-description"></span><br />
               Humidity: <strong>00%</strong>, Wind: <strong>0.0km/h</strong>
             </p>
           </div>
