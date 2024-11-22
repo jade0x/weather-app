@@ -78,6 +78,31 @@ input[type="submit"]:hover {
 .weather-results {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.current-temperature {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* Aligns to right on desktop */
+}
+
+/* Mobile Responsive Stacking */
+@media (max-width: 768px) {
+  .weather-results {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .weather-results-text,
+  .current-temperature {
+    flex-basis: 100%; /* Takes full width */
+  }
+
+  .current-temperature {
+    justify-content: center; /* Centers the temperature unit horizontally */
+    margin-top: 15px; /* Adds space between the stacked elements */
+  }
 }
 
 .search-city {
@@ -119,6 +144,7 @@ input[type="submit"]:hover {
 /*Footer bar*/
 footer {
   margin: auto;
+  padding: 20px 0px;
   text-align: center;
   font-size: 1.2rem; /*12px*/
   font-weight: 600;
