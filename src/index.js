@@ -67,12 +67,19 @@ function searchCity(event) {
   searchInput.focus(); // Put cursor back in search field
 
   let apiKey = "24f34fb24eae01907fa1460264toc5b2";
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiURL).then(displayTemperature);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "24f34fb24eae01907fa1460264toc5b2";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiURL).then(displayForecast);
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = [
@@ -106,6 +113,8 @@ function displayForecast() {
 
 let search = document.querySelector("form");
 search.addEventListener("submit", searchCity);
+
+getForecast("Paris");
 displayForecast();
 
 // Changing the Colour Palette
