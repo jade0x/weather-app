@@ -72,7 +72,40 @@ function searchCity(event) {
   axios.get(apiURL).then(displayTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+<div class="forecast-result">
+              <div class="forecast-date">${day}</div>
+              <div class="forecast-icon">⛅</div>
+              <div class="temperature-group">
+                <div class="high-temp"><strong>30°</strong></div>
+                <div class="low-temp">14°</div>
+              </div>
+            </div>
+`;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let search = document.querySelector("form");
 search.addEventListener("submit", searchCity);
+displayForecast();
 
 // Changing the Colour Palette
