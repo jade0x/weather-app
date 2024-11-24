@@ -6,7 +6,10 @@ function displayTemperature(response) {
 
   let temperatureElement = document.querySelector(".temperature-value");
   let temperature = Math.round(response.data.temperature.current);
-  temperatureElement.innerHTML = temperature;
+  let tempUnit = document.querySelector(".temperature-unit");
+  let unit = "°C";
+  tempUnit.innerHTML = unit;
+  temperatureElement.innerHTML = `${temperature}`;
 
   let currentDate = document.querySelector("#current-date");
   let date = new Date(response.data.time * 1000);
@@ -24,12 +27,10 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = `<img class="temperature-icon" src="${response.data.condition.icon_url}"/>`;
 
-  let humidityElement = document.querySelector("#humidity");
-  let windSpeed = document.querySelector("#wind");
+  let descriptionElement = document.querySelector("#current-description");
   let speeds = Math.round(response.data.wind.speed);
 
-  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-  windSpeed.innerHTML = `${speeds}m/s`;
+  descriptionElement.innerHTML = `Humidity: <strong> ${response.data.temperature.humidity}%<strong>, Wind: <strong>${speeds}m/s`;
 }
 
 // Update Date & Time
