@@ -30,7 +30,8 @@ main {
 
 .weather-app {
   display: block;
-  width: 60%;
+  width: 95%;
+  max-width: 700px;
   margin: 0px auto;
 }
 
@@ -127,8 +128,8 @@ input[type="submit"]:hover {
 
 .temperature-icon {
   position: relative;
-  font-size: 4.5rem; /*40px*/
-  top: 1.4rem;
+  width: 5em;
+  top: 1rem;
 }
 .temperature-value {
   font-size: 7rem; /*40px*/
