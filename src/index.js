@@ -80,8 +80,6 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
-
   let days = [
     "Sunday",
     "Monday",
@@ -93,28 +91,33 @@ function displayForecast(response) {
   ];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
 <div class="forecast-result">
-              <div class="forecast-date">${day}</div>
+              <div class="forecast-date">Tue</div>
               <div class="forecast-icon">⛅</div>
               <div class="temperature-group">
-                <div class="high-temp"><strong>30°</strong></div>
-                <div class="low-temp">14°</div>
+                <div class="high-temp"><strong>${Math.round(
+                  day.temperature.maxiumum
+                )}°</strong></div>
+                <div class="low-temp">${Math.round(
+                  day.temperature.minimum
+                )}°</div>
               </div>
             </div>
 `;
   });
 
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
 let search = document.querySelector("form");
 search.addEventListener("submit", searchCity);
 
-getForecast("Paris");
+getForecast("");
 displayForecast();
 
 // Changing the Colour Palette
