@@ -157,14 +157,14 @@ input[type="submit"]:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  background-color: white;
-  justify-content: space-between;
   gap: 5rem;
   margin: 15px auto;
   padding: 3px 25px;
+  background-color: rgba(255, 255, 255, 0.481);
   border-radius: 20px;
   font-weight: 700;
 }
+
 .forecast-date {
   width: 100px;
   text-align: left;
@@ -176,7 +176,7 @@ input[type="submit"]:hover {
 }
 
 .forecast-icon img {
-  width: 25px;
+  width: 30px;
   height: auto;
 }
 
