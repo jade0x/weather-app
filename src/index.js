@@ -157,7 +157,7 @@ function printLetter(string, el) {
     if (phCount < arr.length) {
       printLetter(origString, el);
     }
-  }, randDelay(400, 600));
+  }, randDelay(400, 400));
 }
 
 function placeholder() {

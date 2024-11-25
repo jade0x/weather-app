@@ -88,6 +88,8 @@ input[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
 }
 
 .current-temperature {
