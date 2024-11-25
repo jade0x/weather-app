@@ -155,12 +155,13 @@ input[type="submit"]:hover {
 
 .forecast-result {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   background-color: white;
   justify-content: space-between;
   gap: 5rem;
   margin: 15px auto;
-  padding: 5px 25px;
+  padding: 3px 25px;
   border-radius: 20px;
   font-weight: 700;
 }
@@ -169,7 +170,14 @@ input[type="submit"]:hover {
   text-align: left;
 }
 .forecast-icon {
+  display: flex;
   text-align: center;
+  align-items: center;
+}
+
+.forecast-icon img {
+  width: 25px;
+  height: auto;
 }
 
 .temperature-group {
