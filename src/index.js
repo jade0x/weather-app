@@ -69,7 +69,16 @@ function searchCity(event) {
   let apiKey = "24f34fb24eae01907fa1460264toc5b2";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-  axios.get(apiURL).then(displayTemperature);
+  axios
+    .get(apiURL)
+    .then((response) => {
+      const lat = response.data.coordinates.latitude;
+      const lon = response.data.coordinates.longitude;
+
+      let weatherApiURL = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+      return axios.get(weatherApiURL);
+    })
+    .then(displayTemperature);
   getForecast(city);
 }
 
@@ -125,5 +134,7 @@ function displayForecast(response) {
 
 let search = document.querySelector("form");
 search.addEventListener("submit", searchCity);
+
+// Placeholder Text Animation
 
 // Changing the Colour Palette
