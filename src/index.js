@@ -137,4 +137,34 @@ search.addEventListener("submit", searchCity);
 
 // Placeholder Text Animation
 
+const ph = "Enter a city...";
+const searchBar = document.querySelector("#search-field");
+let phCount = 0;
+
+function randDelay(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function printLetter(string, el) {
+  const arr = string.split("");
+  const origString = string;
+  const curPlace = el.placeholder;
+  const placeholder = curPlace + arr[phCount];
+
+  setTimeout(() => {
+    el.placeholder = placeholder;
+    phCount++;
+    if (phCount < arr.length) {
+      printLetter(origString, el);
+    }
+  }, randDelay(50, 90));
+}
+
+function placeholder() {
+  searchBar.placeholder = "";
+  printLetter(ph, searchBar);
+}
+
+placeholder();
+
 // Changing the Colour Palette
